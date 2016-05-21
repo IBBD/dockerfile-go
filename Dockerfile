@@ -6,7 +6,7 @@
 #
 # https://github.com/ibbd/dockerfile-go
 #
-# sudo docker build -t ibbd/php7-fpm ./
+# sudo docker build -t ibbd/golang ./
 #
 
 # Pull base image.
@@ -17,12 +17,15 @@ MAINTAINER Alex Cai "cyy0523xc@gmail.com"
 # Get packages
 # Gopm - Go Package Manager
 # Gopm [global options] command [command options] [arguments...]
+    #&& go get github.com/ant0ine/go-json-rest/rest \
+    #&& go get github.com/shykes/spdy-go \
 RUN \
     go get -u github.com/gpmgo/gopm \
     && go get net \
     && go get github.com/graphql-go/graphql \
-    && go get github.com/ant0ine/go-json-rest/rest \
-    && go get github.com/shykes/spdy-go
+    && go get github.com/gin-gonic/gin \
+    && go get -u github.com/kataras/iris \
+    && echo "nameserver 114.114.114.114" >> /etc/resolv.conf
     
 
 # 解决时区问题
