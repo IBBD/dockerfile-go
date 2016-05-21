@@ -21,7 +21,8 @@ RUN \
     go get -u github.com/gpmgo/gopm \
     && go get net \
     && go get github.com/graphql-go/graphql \
-    && go get github.com/ant0ine/go-json-rest/rest
+    && go get github.com/ant0ine/go-json-rest/rest \
+    && go get github.com/shykes/spdy-go
     
 
 # 解决时区问题
