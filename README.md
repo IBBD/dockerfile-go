@@ -5,6 +5,10 @@
 
 ## 更新记录
 
+2016.05.28
+
+增加一些常用的包
+
 2016.05.20
 
 初始版本`golang:1.6.2`
@@ -13,9 +17,17 @@
 
 已安装的包
 
-- gopm
-- graphql-go
-- go-json-rest
+```sh
+    go get -u github.com/gpmgo/gopm \
+    && go get net \
+    && go get github.com/graphql-go/graphql \
+    && go get github.com/gin-gonic/gin \
+    && go get -u github.com/kataras/iris \
+    && go get gopkg.in/hlandau/passlib.v1 \
+    && go get github.com/joho/godotenv \
+    && go get github.com/dgrijalva/jwt-go \
+    && go get github.com/jinzhu/gorm 
+```
 
 web开发框架：
 
@@ -24,6 +36,7 @@ web开发框架：
 - **echo**: Echo is a fast and unfancy HTTP server framework for Go (Golang). Up to 10x faster than the rest. https://labstack.com/echo
 - **iris**: he fastest web framework for Go. Up to 200K rps from more than 1.45M concurrent keep-alive connections http://iris-go.com
 - **goji**: Goji is a minimalistic web framework for Golang that's high in antioxidants.
+
 
 如果需要比较完善的功能，建议选择Gin，如果对效率要求比较高，可以考虑Iris。
 
