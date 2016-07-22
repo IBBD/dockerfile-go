@@ -27,7 +27,8 @@ MAINTAINER Alex Cai "cyy0523xc@gmail.com"
 RUN \
     go get -u github.com/gpmgo/gopm \
     && go get net \
-    && go get golang.org/x/net \
+    && go get golang.org/x/net/context \
+    && go get golang.org/x/net/netutil \
     && go get golang.org/x/tools \
     && go get golang.org/x/crypto \
     && go get golang.org/x/text \
