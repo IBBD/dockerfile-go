@@ -23,11 +23,15 @@ MAINTAINER Alex Cai "cyy0523xc@gmail.com"
     #&& go get github.com/graphql-go/graphql \
     #&& go get github.com/asaskevich/govalidator \
     #&& go get github.com/dgrijalva/jwt-go \
+    #&& go get gopkg.in/hlandau/passlib.v1 \
 RUN \
     go get -u github.com/gpmgo/gopm \
     && go get net \
+    && go get golang.org/x/net \
+    && go get golang.org/x/tools \
+    && go get golang.org/x/crypto \
+    && go get golang.org/x/text \
     && go get github.com/gin-gonic/gin \
-    && go get gopkg.in/hlandau/passlib.v1 \
     && go get github.com/joho/godotenv \
     && go get github.com/jinzhu/gorm \
     && echo "nameserver 114.114.114.114" >> /etc/resolv.conf
