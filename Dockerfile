@@ -31,6 +31,7 @@ RUN \
     && go get golang.org/x/tools \
     && go get golang.org/x/crypto \
     && go get golang.org/x/text \
+    && go get golang.org/x/sys \
     && go get github.com/gin-gonic/gin \
     && go get github.com/joho/godotenv \
     && go get github.com/jinzhu/gorm \
