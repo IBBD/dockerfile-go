@@ -10,7 +10,7 @@
 #
 
 # Pull base image.
-FROM golang:1.6.2
+FROM golang:1.6
 
 MAINTAINER Alex Cai "cyy0523xc@gmail.com"
 
@@ -20,16 +20,16 @@ MAINTAINER Alex Cai "cyy0523xc@gmail.com"
     #&& go get github.com/ant0ine/go-json-rest/rest \
     #&& go get github.com/shykes/spdy-go \
     #&& go get -u github.com/kataras/iris \
+    #&& go get github.com/graphql-go/graphql \
+    #&& go get github.com/asaskevich/govalidator \
+    #&& go get github.com/dgrijalva/jwt-go \
 RUN \
     go get -u github.com/gpmgo/gopm \
     && go get net \
-    && go get github.com/graphql-go/graphql \
     && go get github.com/gin-gonic/gin \
     && go get gopkg.in/hlandau/passlib.v1 \
     && go get github.com/joho/godotenv \
-    && go get github.com/dgrijalva/jwt-go \
     && go get github.com/jinzhu/gorm \
-    && go get github.com/asaskevich/govalidator \
     && echo "nameserver 114.114.114.114" >> /etc/resolv.conf
     
 
