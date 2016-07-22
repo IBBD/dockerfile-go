@@ -24,15 +24,15 @@ MAINTAINER Alex Cai "cyy0523xc@gmail.com"
     #&& go get github.com/asaskevich/govalidator \
     #&& go get github.com/dgrijalva/jwt-go \
     #&& go get gopkg.in/hlandau/passlib.v1 \
+    #&& go get golang.org/x/tools \
+    #&& go get golang.org/x/crypto \
+    #&& go get golang.org/x/text \
+    #&& go get golang.org/x/sys \
 RUN \
     go get -u github.com/gpmgo/gopm \
     && go get net \
     && go get golang.org/x/net/context \
     && go get golang.org/x/net/netutil \
-    && go get golang.org/x/tools \
-    && go get golang.org/x/crypto \
-    && go get golang.org/x/text \
-    && go get golang.org/x/sys \
     && go get github.com/gin-gonic/gin \
     && go get github.com/joho/godotenv \
     && go get github.com/jinzhu/gorm \
