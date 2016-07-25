@@ -31,11 +31,12 @@ MAINTAINER Alex Cai "cyy0523xc@gmail.com"
 RUN \
     go get -u github.com/gpmgo/gopm \
     && go get net \
-    && go get golang.org/x/net/context \
-    && go get golang.org/x/net/netutil \
+    && go get golang.org/x/net/{bpf,context,dict,http2,icmp,idna,internal,ipv4,ipv6,lex,netutil,proxy,publicsuffix,route,trace,webdav,websocket,xsrftoken} \
+    && go get golang.org/x/tools/{benchmark,cmd,container,cover,go,godoc,imports,oracle,playground,present,refactor} \
     && go get github.com/gin-gonic/gin \
     && go get github.com/joho/godotenv \
     && go get github.com/jinzhu/gorm \
+    && go get -u -d -t github.com/tinylib/msgp \
     && echo "nameserver 114.114.114.114" >> /etc/resolv.conf
     
 
