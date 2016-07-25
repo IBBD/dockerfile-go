@@ -2,7 +2,8 @@
 # Golang Dockerfile
 # 主要为了满足高并发接口而开发
 #
-# 手动安装包：https://gopm.io/download
+# 1. 手动安装包：https://gopm.io/download
+# 2. golang.org的包无法安装可以到github.com/golang上查找
 #
 # https://github.com/ibbd/dockerfile-go
 #
@@ -32,7 +33,6 @@ RUN \
     go get -u github.com/gpmgo/gopm \
     && go get net \
     && go get golang.org/x/net/context \
-    && go get golang.org/x/tools/benchmark \
     && go get github.com/gin-gonic/gin \
     && go get github.com/joho/godotenv \
     && go get github.com/jinzhu/gorm \
