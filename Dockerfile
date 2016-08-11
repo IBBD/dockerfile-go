@@ -40,7 +40,7 @@ RUN \
     && echo "nameserver 114.114.114.114" >> /etc/resolv.conf
    
 # 安装守护进程
-RUN apt-get update && apt-get install -y  supervisor　&&  apt-get clean && rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get install -y  supervisor
 RUN mkdir -p  /var/log/supervisor
 
 # 解决时区问题
