@@ -11,7 +11,7 @@
 #
 
 # Pull base image.
-FROM golang:1.6
+FROM golang
 
 MAINTAINER Alex Cai "cyy0523xc@gmail.com"
 
