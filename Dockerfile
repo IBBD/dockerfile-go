@@ -38,7 +38,10 @@ RUN \
     && go get github.com/jinzhu/gorm \
     && go get -u -d -t github.com/tinylib/msgp \
     && echo "nameserver 114.114.114.114" >> /etc/resolv.conf
-    
+   
+# 安装守护进程
+RUN apt-get update && apt-get install -y  supervisor　&&  apt-get clean && rm -rf /var/lib/apt/lists/*
+RUN mkdir -p  /var/log/supervisor
 
 # 解决时区问题
 ENV TZ "Asia/Shanghai"
@@ -52,3 +55,6 @@ VOLUME /var/www
 
 # 工作目录
 WORKDIR /var/www 
+
+EXPOSE 8080 8081 8082
+CMD ["/usr/bin/supervisord"]
