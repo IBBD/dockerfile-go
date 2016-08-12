@@ -10,5 +10,5 @@ docker run -ti --name=ibbd-go -d \
     -p 8080:8080 \
     -p 8081:8081 \
     -p 8082:8082 \
-    golang \
+    ibbd/golang \
     /bin/bash
