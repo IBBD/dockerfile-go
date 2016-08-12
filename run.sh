@@ -7,6 +7,7 @@
 docker run -ti --name=ibbd-go -d \
     -v /var/www/golang/src/git.ibbd.net:/var/www \
     -v /var/www/golang:/go \
+    -v /var/log/dsp:/var/log/dsp \
     -p 8080:8080 \
     -p 8081:8081 \
     -p 8082:8082 \
