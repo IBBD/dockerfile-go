@@ -14,6 +14,14 @@
 FROM golang
 
 MAINTAINER Alex Cai "cyy0523xc@gmail.com"
+   
+# 安装守护进程
+RUN apt-get update \
+    && apt-get install -y  supervisor \
+    && mkdir -p  /var/log/supervisor \
+    && apt-get autoremove \
+    && apt-get clean \
+    && rm -r /var/lib/apt/lists/*
 
 # Get packages
 # Gopm - Go Package Manager
@@ -29,19 +37,14 @@ MAINTAINER Alex Cai "cyy0523xc@gmail.com"
     #&& go get golang.org/x/crypto \
     #&& go get golang.org/x/text \
     #&& go get golang.org/x/sys \
+    #&& go get -u -d -t github.com/tinylib/msgp \
 RUN \
-    go get -u github.com/gpmgo/gopm \
-    && go get net \
-    && go get golang.org/x/net/context \
-    && go get github.com/gin-gonic/gin \
+    go get golang.org/x/net/context \
     && go get github.com/joho/godotenv \
-    && go get github.com/jinzhu/gorm \
-    && go get -u -d -t github.com/tinylib/msgp \
+    && go get github.com/go-sql-driver/mysql \
+    && go get github.com/garyburd/redigo/redis \
+    && go get labix.org/v2/mgo \
     && echo "nameserver 114.114.114.114" >> /etc/resolv.conf
-   
-# 安装守护进程
-RUN apt-get update && apt-get install -y  supervisor
-RUN mkdir -p  /var/log/supervisor
 
 # 解决时区问题
 ENV TZ "Asia/Shanghai"
